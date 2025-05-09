@@ -1,0 +1,122 @@
+:root {
+    --light-bg: #f9f9f9;
+    --dark-bg: #121212;
+    --light-text: #333;
+    --dark-text: #eaeaea;
+    --highlight: #00d4ff;
+    --card-bg: rgba(255, 255, 255, 0.05);
+  }
+  
+  body[data-theme='dark'] .Explore-menu {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+  }
+  
+  body[data-theme='light'] .Explore-menu {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+  }
+  
+  .Explore-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+  }
+  
+  .Explore-menu-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .explore-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--highlight);
+  }
+  
+  .Explore-menu h1 {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  
+  .Explore-menu-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .Explore-menu-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .Explore-menu-list-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    background: var(--card-bg);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 120px;
+    min-width: 120px;
+    flex-shrink: 0;
+  }
+  
+  .Explore-menu-list-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--highlight);
+  }
+  
+  .Explore-menu-list-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px solid transparent;
+    background-color: white;
+    transition: 0.3s ease;
+  }
+  
+  .Explore-menu-list-item.active img {
+    border: 4px solid var(--highlight);
+  }
+  
+  .Explore-menu-list-item p {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .Explore-menu hr {
+    height: 2px;
+    border: none;
+    background: var(--highlight);
+    opacity: 0.6;
+  }
+  
+  .theme-toggle-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  

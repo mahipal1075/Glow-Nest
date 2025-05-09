@@ -1,0 +1,133 @@
+:root {
+  --header-text: #111;
+  --header-subtext: #333;
+  --button-bg: white;
+  --button-text: #111;
+}
+
+[data-theme="dark"] {
+  --header-text: #ffffff;
+  --header-subtext: #cccccc;
+  --button-bg: #222;
+  --button-text: #f1f1f1;
+}
+
+
+.header {
+  width: 79vw;
+  height: 34vw;
+  margin: 25px auto;
+  border-radius: 20px;
+  background: url('./background.jpg') no-repeat center/cover;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: zoomIn 1.5s ease-in-out; /* Added zoom-in effect */
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Added dark overlay */
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 10;
+}
+
+.theme-toggle button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.theme-toggle button:hover {
+  background-color: #666;
+  color: white;
+  transform: scale(1.1); /* Added scale effect on hover */
+}
+
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 2s;
+  z-index: 2; /* Ensures text is above the overlay */
+}
+
+.header-contents h2 {
+  font-weight: 600;
+  color: var(--header-text);
+  font-size: max(4.5vw, 50px);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Added text glow */
+}
+
+.header-contents p {
+  color: var(--header-subtext);
+  font-size: 1vw;
+}
+
+.header-contents button {
+  border: none;
+  color: var(--button-text);
+  font-weight: 500;
+  padding: 0.5vw 1.5vw;
+  background-color: var(--button-bg);
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header-contents button:hover {
+  background-color: #333;
+  color: white;
+  transform: scale(1.1); /* Added scale effect on hover */
+}
+
+@media (max-width: 1050px) {
+  .header-contents {
+      max-width: 45%;
+  }
+}
+
+@media (max-width: 750px) {
+  .header-contents {
+      max-width: 65%;
+  }
+  .header-contents p {
+      display: none;
+  }
+  .header-contents button {
+      padding: 2vw 4vw;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
