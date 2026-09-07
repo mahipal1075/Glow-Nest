@@ -9,7 +9,7 @@ import Orders from './pages/orders/orders.jsx'
 
 const App = () => {
 
-  const url = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL || "https://glow-nest-dzvu.onrender.com";
 
   return (
     <div>
