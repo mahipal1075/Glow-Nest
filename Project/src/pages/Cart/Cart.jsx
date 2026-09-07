@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './cart.css';
+import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
 import { CircleX } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

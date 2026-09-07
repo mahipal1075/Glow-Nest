@@ -1,5 +1,5 @@
 import React from 'react'
-import './footer.css'
+import './Footer.css'
 import { Copyright, Facebook, Linkedin, Twitter } from 'lucide-react'
 import { assets } from '../../assets/assets'
 
