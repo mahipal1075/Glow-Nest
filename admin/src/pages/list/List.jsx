@@ -10,7 +10,7 @@ const List = ({url}) => {
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
-    const response = await axios.get(`${url}/api/product/list`);
+    const response = await axios.get(`${url}api/product/list`);
     // console.log(response.data);
     if (response.data.success) {
       setList(response.data.data);
@@ -21,7 +21,7 @@ const List = ({url}) => {
   }
 
   const removeProduct = async (productId) => {
-    const response = await axios.post(`${url}/api/product/remove`, {id:productId})
+    const response = await axios.post(`${url}api/product/remove`, {id:productId})
     await fetchList();
     if(response.data.success){
       toast.success(response.data.message)
