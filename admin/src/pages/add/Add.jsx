@@ -148,7 +148,7 @@ const Add = ({url}) => {
         formData.append("image",image);
         
         try {
-            const response = await axios.post(`${url}/api/product/add`, formData);
+            const response = await axios.post(`${url}api/product/add`, formData);
             if (response.data.success) {
                 setData({
                     name: "",
