@@ -31,7 +31,7 @@ const Cart = () => {
         <br />
         <hr />
         {product_list.map((product, index) => {
-          if (cartItems[product._id] > 0) {
+          if (cartItems?.[product._id] > 0) {
             return (
               <div key={product._id}>
                 <div className="cart-items-title cart-items-item">

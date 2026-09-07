@@ -12,7 +12,7 @@ const Fooditem = ({ id, name, price, description, image }) => {
         <FaHeart />
       </div>
 
-      {cartItems[id] > 0 && (
+      {cartItems?.[id] > 0 && (
   <div className="item-counter">
     <p className="item-count">{cartItems[id]}</p>
   </div>
@@ -29,7 +29,7 @@ const Fooditem = ({ id, name, price, description, image }) => {
         <p className="product-item-price">₹{price}/-</p>
 
         <div className="product-add">
-          {!cartItems[id] ? (
+          {!cartItems?.[id] ? (
             <div className="add" onClick={() => addToCart(id)}>Add to Cart</div>
           ) : (
             <div className="product-item-counter">

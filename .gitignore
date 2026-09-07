@@ -1,1 +1,31 @@
-".env" 
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment files
+.env
+.env.*
+*.env
+Backend/.env
+!.env.example
+!*.example
+
+# Build outputs
+dist/
+*/dist/
+dist-ssr/
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local/repo backups
+MY_Repository/

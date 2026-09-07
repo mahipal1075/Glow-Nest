@@ -10,10 +10,17 @@ const MyOrders = () => {
     const [data, setData] = useState([]);
 
     const fetchOrders = async () => {
-        const response = await axios.post(url + "/api/order/userorders", {}, { headers: { token } });
-        setData(response.data.data);
-        console.log(response.data.data);
-
+        try {
+            const response = await axios.post(url + "/api/order/userorders", {}, { headers: { token } });
+            if (response.data.success && response.data.data) {
+                setData(response.data.data);
+            } else {
+                setData([]);
+            }
+        } catch (error) {
+            console.error("Error fetching orders:", error);
+            setData([]);
+        }
     }
 
     useEffect(() => {

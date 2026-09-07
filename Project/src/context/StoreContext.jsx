@@ -35,20 +35,37 @@ const StoreContextProvider = (props) => {
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
                 let itemInfo = product_list.find((product) => product._id === item);
-                totalAmount += itemInfo.price * cartItems[item];
+                if (itemInfo) {
+                    totalAmount += itemInfo.price * cartItems[item];
+                }
             }
         }
         return totalAmount;
     }
 
     const fetchProductList = async () => {
-        const response = await axios.get(url+"/api/product/list");
-        setProductList(response.data.data);
+        try {
+            const response = await axios.get(url+"/api/product/list");
+            if (response.data.success) {
+                setProductList(response.data.data);
+            }
+        } catch (error) {
+            console.error("Error fetching product list:", error);
+        }
     }
 
     const loadCartData = async (token) => {
-        const response = await axios.post(url+"/api/cart/get", {},{headers:{token}});
-        setCartItems(response.data.cartData);
+        try {
+            const response = await axios.post(url+"/api/cart/get", {},{headers:{token}});
+            if (response.data.success && response.data.cartData) {
+                setCartItems(response.data.cartData);
+            } else {
+                setCartItems({});
+            }
+        } catch (error) {
+            console.error("Error loading cart data:", error);
+            setCartItems({});
+        }
     }
 
     useEffect(()=>{
@@ -69,6 +86,7 @@ const StoreContextProvider = (props) => {
         addToCart,
         removeFromCart,
         getTotalCartAmount,
+        loadCartData,
         url,
         token,
         setToken

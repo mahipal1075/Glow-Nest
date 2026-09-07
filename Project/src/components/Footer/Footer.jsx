@@ -1,13 +1,14 @@
 import React from 'react'
 import './footer.css'
 import { Copyright, Facebook, Linkedin, Twitter } from 'lucide-react'
+import { assets } from '../../assets/assets'
 
 const Footer = () => {
     return (
         <div className="footer" id="footer">
             <div className="footer-content">
                 <div className="footer-content-left">
-                    <img src="" alt="" />
+                    <img src={assets.Logo} alt="Glow-Nest Logo" style={{ width: '80px', borderRadius: '50%' }} />
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia minus alias suscipit ducimus quidem nostrum. Dolores amet consequatur laboriosam, non quis facilis recusandae dicta, repellendus, voluptatum esse sint similique tenetur veritatis culpa possimus quae ad sunt nisi error! Itaque eaque praesentium possimus pariatur ducimus beatae mollitia dolore temporibus at accusamus sed quam, nostrum sunt, id sit eos quo sequi nulla, nisi alias perferendis nobis corrupti saepe. Quisquam ratione soluta est!</p>
                     <div className="footer-social-icons">
                         <Facebook />
